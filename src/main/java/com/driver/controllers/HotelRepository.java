@@ -74,7 +74,7 @@ public class HotelRepository {
 
     public int getBookings(Integer aadharCard) {
         //In this function return the bookings done by a person
-        if(!ur.containsKey(aadharCard))return 0;
+        if(!ub.containsKey(aadharCard))return 0;
         return ub.get(aadharCard).size();
     }
 
