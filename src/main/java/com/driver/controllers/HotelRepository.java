@@ -67,7 +67,9 @@ public class HotelRepository {
         if(hr.get(booking.getHotelName()).getAvailableRooms()<booking.getNoOfRooms())
             return -1;
         booking.setAmountToBePaid(booking.getNoOfRooms()*hr.get(booking.getHotelName()).getPricePerNight());
-        ub.getOrDefault(booking.getBookingAadharCard(),new ArrayList<>()).add(booking);
+        List<Booking> temp = ub.getOrDefault(booking.getBookingAadharCard(),new ArrayList<>());
+        temp.add(booking);
+        ub.put(booking.getBookingAadharCard(),temp);
         return booking.getAmountToBePaid();
 
     }
