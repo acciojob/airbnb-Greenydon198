@@ -22,8 +22,8 @@ import java.util.UUID;
 @RequestMapping("/hotel")
 public class HotelManagementController {
 
-    @Autowired
-    HotelService hotelService;
+//    @Autowired
+    HotelService hotelService = new HotelService();
 
     @PostMapping("/add-hotel")
     public String addHotel(@RequestBody Hotel hotel){
